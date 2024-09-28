@@ -1,15 +1,33 @@
+// libs
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+// layouts
+import AppLayout from "./components/layout/AppLayout";
+// pages
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+// ui
+import NotFound404 from "./components/ui/NotFound404";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
+const client = new QueryClient();
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route>
-          <Route path="message" />
-        </Route>
-        <Route path="about" />
-      </Routes>
-    </BrowserRouter>
+    <QueryClientProvider client={client}>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+          </Route>
+          <Route path="about" />
+
+          <Route path="*" element={<NotFound404 />} />
+        </Routes>
+      </BrowserRouter>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   );
 }
 
