@@ -1,11 +1,10 @@
-import React from "react";
-import Message from "../components/ui/Message";
+import HeroSwiper from "../components/ui/home/HeroSwiper";
 
 export default function Home() {
   return (
     <div>
       Home
-      <Message />
+      <HeroSwiper />
     </div>
   );
 }
