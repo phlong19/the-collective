@@ -1,16 +1,23 @@
 import { Outlet } from "react-router-dom";
-import Container from "@mui/material/Container";
 import MobileNavBar from "../ui/MobileNavBar";
-import { useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "react-responsive";
 import DesktopNavBar from "../ui/DesktopFloatMenu";
+import { Layout } from "antd";
+
+const { Footer } = Layout;
 
 export default function AppLayout() {
-  const matches = useMediaQuery("(max-width:768px)");
+  const matches = useMediaQuery({ query: "(max-width:768px)" });
 
   return (
-    <Container sx={{ maxWidth: "100% !important" }} disableGutters>
+    <Layout>
       {matches ? <MobileNavBar /> : <DesktopNavBar />}
+      {/* notifications */}
+      <div className="h-11 bg-dark text-white">
+        1/1 somethign important is coming
+      </div>
       <Outlet />
-    </Container>
+      <Footer />
+    </Layout>
   );
 }

@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 
 export default function NotFound404() {
@@ -7,7 +7,7 @@ export default function NotFound404() {
   return (
     <div>
       <p>NotFound404</p>
-      <Button variant="text" onClick={() => navigate("/")} color="primary">
+      <Button color="primary" onClick={() => navigate("/")}>
         go home
       </Button>
     </div>

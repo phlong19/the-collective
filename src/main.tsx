@@ -3,16 +3,19 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./styles/index.css";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import { Provider } from "react-redux";
 import { store } from "./services/redux/store.ts";
 import { ErrorBoundary } from "react-error-boundary";
 import FallBackErrorBoundary from "./components/ui/FallBackErrorBoundary.tsx";
-import { ThemeProvider } from "@mui/material";
+import { ConfigProvider } from "antd";
 import { theme } from "./theme/theme.ts";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
+    <ConfigProvider theme={theme}>
       <ErrorBoundary
         FallbackComponent={FallBackErrorBoundary}
         onReset={() => window.location.replace("/")}
@@ -21,6 +24,6 @@ createRoot(document.getElementById("root")!).render(
         <App />
         {/* </Provider> */}
       </ErrorBoundary>
-    </ThemeProvider>
+    </ConfigProvider>
   </StrictMode>,
 );
