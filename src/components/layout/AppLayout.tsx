@@ -2,8 +2,8 @@ import { Outlet } from "react-router-dom";
 import MobileNavBar from "../ui/MobileNavBar";
 import { useMediaQuery } from "react-responsive";
 import DesktopNavBar from "../ui/DesktopFloatMenu";
-import { Flex, Layout } from "antd";
-import { AIArrowRight } from "aveicon";
+import { Flex, Layout, Typography } from "antd";
+import { AIChevronsLeft, AIChevronsRight, AIXmark } from "aveicon";
 import Footer from "../ui/Footer";
 
 export default function AppLayout() {
@@ -13,11 +13,15 @@ export default function AppLayout() {
     <Layout>
       {matches ? <MobileNavBar /> : <DesktopNavBar />}
       {/* notifications */}
-      <div className="flex items-center gap-2 bg-dark p-2 text-white">
+      <div className="flex items-center gap-2 bg-dark px-4 py-3 text-white">
         <Flex align="center" gap={6}>
-          1/1 <AIArrowRight size={13} stroke="white" />
+          <AIChevronsLeft stroke="white" /> 1/2{" "}
+          <AIChevronsRight stroke="white" />
         </Flex>
-        <p>somethign important is coming</p>
+        <Typography.Text className="line-clamp-1 pr-16 text-white" ellipsis>
+          somethign important is coming, son aosnfi ansoi fonis
+        </Typography.Text>
+        <AIXmark stroke="white" size={25} />
       </div>
       <Outlet />
       <Footer />
