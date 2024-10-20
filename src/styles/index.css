@@ -23,3 +23,11 @@ body {
 ul.slick-dots li.slick-active div {
   background: white;
 }
+
+.ant-collapse-header {
+  padding: 0 !important;
+}
+
+.ant-collapse-content-box {
+  padding: 0 !important;
+}
