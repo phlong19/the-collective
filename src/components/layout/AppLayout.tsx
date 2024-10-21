@@ -4,8 +4,7 @@ import { useMediaQuery } from "react-responsive";
 import DesktopNavBar from "../ui/DesktopFloatMenu";
 import { Flex, Layout } from "antd";
 import { AIArrowRight } from "aveicon";
-
-const { Footer } = Layout;
+import Footer from "../ui/Footer";
 
 export default function AppLayout() {
   const matches = useMediaQuery({ query: "(max-width:768px)" });
