@@ -13,12 +13,13 @@ export default function AppLayout() {
     <Layout>
       {matches ? <MobileNavBar /> : <DesktopNavBar />}
       {/* notifications */}
-      <div className="flex items-center gap-2 bg-dark px-4 py-3 text-white">
+      <div className="flex place-items-start gap-2 bg-dark px-4 py-3 text-white">
         <Flex align="center" gap={6}>
-          <AIChevronsLeft stroke="white" /> 1/2{" "}
-          <AIChevronsRight stroke="white" />
+          <AIChevronsLeft stroke="white" size={20} />
+          <p>1/2</p>
+          <AIChevronsRight stroke="white" size={20} />
         </Flex>
-        <Typography.Text className="line-clamp-1 pr-16 text-white" ellipsis>
+        <Typography.Text className="line-clamp-1 pr-4 text-white" ellipsis>
           somethign important is coming, son aosnfi ansoi fonis
         </Typography.Text>
         <AIXmark stroke="white" size={25} />

@@ -1242,6 +1242,13 @@
   dependencies:
     undici-types "~6.19.2"
 
+"@types/node@^22.7.5":
+  version "22.7.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.7.5.tgz#cfde981727a7ab3611a481510b473ae54442b92b"
+  integrity sha512-jML7s2NAzMWc//QSJ1a3prpk78cOPchGvXJsC3C6R6PSMoooztvRVQEz89gmBTBY1SPMaqo5teB4uNHPdetShQ==
+  dependencies:
+    undici-types "~6.19.2"
+
 "@types/prop-types@*":
   version "15.7.13"
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.13.tgz"
@@ -1510,10 +1517,10 @@ autoprefixer@^10.4.20:
     picocolors "^1.0.1"
     postcss-value-parser "^4.2.0"
 
-aveicon@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/aveicon/-/aveicon-0.0.2.tgz#3305b149f08fddc97416a5e74eecd6c9e9a2cfcb"
-  integrity sha512-C0T/Rkwrs6xSlLzooORdAexU0o9D6KEOO1Q2eB9lvKRkculVdaDfIWLf7a2vN9MilQcp3WkeEPhIzEPvfwOcHg==
+aveicon@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/aveicon/-/aveicon-0.0.5.tgz#2002cfa4c78135d12d370c5570c0950053ad708c"
+  integrity sha512-t5min92vITZoDcgBqCLbgshf0Qc/VLwrQZ7T1SYp+oQmejeUCE8MptDemRE9qpNBcDnVKR6uJj/Mt4Gu1rHr9w==
   dependencies:
     react "^18.0.0"
     react-dom "^18.0.0"
@@ -1696,7 +1703,7 @@ csstype@^3.0.2, csstype@^3.1.3:
   resolved "https://registry.npmjs.org/csstype/-/csstype-3.1.3.tgz"
   integrity sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==
 
-dayjs@^1.11.11:
+dayjs@^1.11.11, dayjs@^1.11.13:
   version "1.11.13"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.13.tgz#92430b0139055c3ebb60150aa13e860a4b5a366c"
   integrity sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==
