@@ -1,28 +1,33 @@
 import Slider, { Settings } from "react-slick";
 import { Event } from "@/services/model/model";
-import { useCallback, useMemo, useState } from "react";
-import { Badge, Button, Flex, Image, Popover, Typography } from "antd";
+import { useCallback, useMemo } from "react";
+import { Badge, Flex, Image, Popover, Typography } from "antd";
 import { AIArrowRight, AICalendar, AIRss } from "aveicon";
 import { SCREEN } from "@/constants/variable";
 import dayjs from "@/utils/dayjs";
+import CTAButton from "../CTAButton";
+import { Link } from "react-router-dom";
 
 const { Title, Text, Paragraph } = Typography;
 
 export default function EventsSwiper() {
-  const events: Event[] = Array.from({ length: 5 }).map((_, index) => ({
-    title: "IMPART Art Prize Open Call 2024",
-    startDate: "2023/10/10",
-    endDate: "2024/10/20",
-    image: "/home-event.png",
-    hybrid: true,
-    categories:
-      index !== 2
+  const events: Event[] = Array.from({ length: 5 }).map((_, index) => {
+    const isEven = index % 2 === 0;
+
+    return {
+      title: "IMPART Art Prize Open Call 2024",
+      startDate: isEven ? "2023/10/10" : "2024/08/03",
+      endDate: "2024/10/20",
+      image: "/home-event.png",
+      hybrid: true,
+      categories: !isEven
         ? ["Multi-Disciplinary", "Music"]
         : ["Multi-Disciplinary", "Music", "Game", "Black"],
-    isFree: index % 2 === 0,
-    isSuperEvent: index % 2 !== 0,
-    id: Math.random().toString(),
-  }));
+      isFree: isEven,
+      isSuperEvent: !isEven,
+      id: Math.random().toString(),
+    };
+  });
 
   const settings: Settings = useMemo(
     () => ({
@@ -151,19 +156,22 @@ export default function EventsSwiper() {
             }) => (
               <Flex key={id} className="flex-col items-center justify-center">
                 {/* media */}
-                <div className="relative">
-                  <Image
-                    src={image}
-                    alt="image"
-                    style={{ objectFit: "cover" }}
-                    className="min-h-[220px]"
-                  />
-                  {(isFree || isSuperEvent) && (
-                    <div className="absolute right-0 top-0 rounded-es-[15px] border-b-[1.5px] border-l-[1.5px] border-white bg-dark px-6 py-4 text-center font-comfortaa text-xl font-bold uppercase leading-6 text-white">
-                      {isFree ? "free" : isSuperEvent ? "super" : ""}
-                    </div>
-                  )}
-                </div>
+                <Link to={id}>
+                  <div className="relative">
+                    <Image
+                      src={image}
+                      alt="image"
+                      style={{ objectFit: "cover" }}
+                      className="min-h-[220px]"
+                      preview={false}
+                    />
+                    {(isFree || isSuperEvent) && (
+                      <div className="absolute right-0 top-0 rounded-es-[15px] border-b-[1.5px] border-l-[1.5px] border-white bg-dark px-6 py-4 text-center font-comfortaa text-xl font-bold uppercase leading-6 text-white">
+                        {isFree ? "free" : isSuperEvent ? "super" : ""}
+                      </div>
+                    )}
+                  </div>
+                </Link>
                 {/* information */}
                 <Flex className="flex-col gap-4 p-6">
                   <Flex gap={8}>
@@ -171,12 +179,14 @@ export default function EventsSwiper() {
                     <Text className="!text-base font-bold !leading-[18px]">
                       {dayjs(startDate).isSame(endDate, "year")
                         ? `${dayjs(startDate).format("DD MMM (ddd)")} - ${dayjs(endDate).format("DD MMM (ddd)")}`
-                        : `${dayjs(startDate).format("DD MMM YYYY (ddd)")} - ${dayjs(endDate)}`}
+                        : `${dayjs(startDate).format("DD MMM YYYY (ddd)")} - ${dayjs(endDate).format("DD MMM YYYY (ddd)")}`}
                     </Text>
                   </Flex>
-                  <Title level={4} className="font-poppins !text-xl">
-                    {title}
-                  </Title>
+                  <Link to={id}>
+                    <Title level={4} className="font-poppins !text-xl">
+                      {title}
+                    </Title>
+                  </Link>
                   {hybrid && (
                     <Flex gap={8} align="baseline">
                       <AIRss size={12} />
@@ -194,13 +204,10 @@ export default function EventsSwiper() {
         </Slider>
       </div>
 
-      <Button
-        className="mx-auto h-auto w-fit gap-2.5 rounded-full border-0 bg-dark px-8 py-3.5 text-base font-bold capitalize leading-5 text-white hover:bg-black/80"
+      <CTAButton
+        label="view all events"
         icon={<AIArrowRight stroke="white" size={12} />}
-        iconPosition="end"
-      >
-        view all events
-      </Button>
+      />
     </Flex>
   );
 }

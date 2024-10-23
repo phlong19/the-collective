@@ -46,6 +46,7 @@ export default {
 
         // dark
         dark: "#2d2926",
+        "gray-border": "#d5d4d4",
       },
       fontFamily: {
         comfortaa: ["Comfortaa", "sans-serif"],

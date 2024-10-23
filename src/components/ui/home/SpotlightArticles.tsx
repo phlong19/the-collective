@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph } = Typography;
 
 function SpotlightArticles() {
   const [selected, setSelected] = useState(0);
@@ -13,6 +13,36 @@ function SpotlightArticles() {
     setSelected(index);
   }
 
+  function scrollSlideIntoView(index: number) {
+    if (matches) {
+      // on desktop => cook
+      return;
+    }
+    const element = document.getElementById(`panel-${index}`);
+    if (element) {
+      const offsetTop = element.offsetTop;
+      const windowHeight = window.innerHeight;
+      const elementRect = element.getBoundingClientRect();
+
+      if (offsetTop + elementRect.height > window.scrollY + windowHeight) {
+        window.scrollTo({
+          top: offsetTop + elementRect.height - windowHeight,
+          behavior: "smooth",
+        });
+      } else if (offsetTop < window.scrollY) {
+        window.scrollTo({
+          // * 2 cause these a case that un-select element got top over scroll over its half
+          // lol hope me of future will understand what i'm commenting here :D
+          top: offsetTop - Math.abs(elementRect.top) - elementRect.height * 2,
+          behavior: "smooth",
+        });
+      } else {
+        return;
+      }
+    }
+  }
+
+  // auto play on desktop
   useEffect(() => {
     if (matches) {
       const timer = setTimeout(() => {
@@ -28,7 +58,7 @@ function SpotlightArticles() {
       <Collapse
         bordered={false}
         accordion
-        className="w-full gap-4 bg-secondary-200 px-4 py-10"
+        className="w-full bg-secondary-200 px-4 py-10"
         activeKey={selected}
         onChange={(key) => changeSlide(Number(key))}
       >
@@ -36,6 +66,7 @@ function SpotlightArticles() {
           const isSelecting = selected === index;
           return (
             <Collapse.Panel
+              id={`panel-${index}`}
               style={{ borderBottom: 0, marginBottom: "16px" }}
               header={
                 <Image
@@ -44,6 +75,7 @@ function SpotlightArticles() {
                   className={`${!isSelecting ? "max-h-[120px] grayscale" : ""} rounded object-cover`}
                   alt="article thumbnail w-full"
                   rootClassName="w-full"
+                  onClick={() => scrollSlideIntoView(index)}
                 />
               }
               key={index}
@@ -51,7 +83,7 @@ function SpotlightArticles() {
             >
               <motion.div
                 layout
-                className={`wrapper flex flex-col-reverse gap-4 md:flex-row ${isSelecting ? "h-full" : "h-[120px]"}`}
+                className={`flex flex-col-reverse gap-4 md:flex-row ${isSelecting ? "h-full" : "h-[120px]"}`}
               >
                 {isSelecting && (
                   <Flex className="flex-col gap-2">
@@ -85,7 +117,6 @@ function SpotlightArticles() {
           );
         })}
       </Collapse>
-      {/* </Flex> */}
     </AnimatePresence>
   );
 }

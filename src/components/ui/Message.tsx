@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+
 import { getProfiles } from "../../services/api/profile";
 
 export default function Message() {

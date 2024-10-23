@@ -32,7 +32,7 @@ export default function HeroSwiper() {
         </ul>
       ),
       customPaging: () => (
-        <div className={`h-2.5 w-7 rounded-full bg-gray-400`}></div>
+        <div className={`bg-gray-400 h-2.5 w-7 rounded-full`}></div>
       ),
     }),
     [],

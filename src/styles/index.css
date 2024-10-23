@@ -5,6 +5,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+}
+
 *,
 ::after,
 ::before {
@@ -20,18 +23,46 @@ body {
   line-height: 24px;
 }
 
-.ant-typography {
-  margin: 0 !important;
-}
-
+/* slick */
 ul.slick-dots li.slick-active div {
   background: white;
 }
 
+/* antd */
+
+/* typo */
+.ant-typography {
+  margin: 0 !important;
+}
+
+/* collapse */
 .ant-collapse-header {
   padding: 0 !important;
 }
 
 .ant-collapse-content-box {
   padding: 0 !important;
+}
+
+/* drawer */
+.ant-drawer-header-title {
+  flex-direction: row-reverse;
+  height: auto;
+}
+
+.ant-drawer-close {
+  height: auto !important;
+  width: auto !important;
+  margin-right: 0 !important;
+}
+
+.ant-drawer-close path {
+  stroke: red;
+}
+
+/* modal */
+.ant-modal-close {
+  height: auto !important;
+  width: auto !important;
+  top: auto !important;
 }

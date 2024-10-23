@@ -20,9 +20,9 @@ createRoot(document.getElementById("root")!).render(
         FallbackComponent={FallBackErrorBoundary}
         onReset={() => window.location.replace("/")}
       >
-        {/* <Provider store={store}> */}
-        <App />
-        {/* </Provider> */}
+        <Provider store={store}>
+          <App />
+        </Provider>
       </ErrorBoundary>
     </ConfigProvider>
   </StrictMode>,

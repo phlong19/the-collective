@@ -6,14 +6,14 @@ function Searchbar() {
   const [query, setQuery] = useState("");
 
   return (
-    <div className="w-full border-t-4 border-primary p-7 px-2 bg-dark">
+    <div className="w-full border-t-4 border-primary bg-dark p-7 px-2">
       <div className="relative">
         <Input
           id="home"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search event"
-          className="min-h-[60px] font-comfortaa rounded-full border border-[#D5D4D4] pl-3.5 text-sm font-bold leading-5 placeholder:text-[#817F7D]"
+          className="border-gray-border min-h-[60px] rounded-full border pl-3.5 font-comfortaa text-sm font-bold leading-5 placeholder:text-[#817F7D]"
         />
         <Button
           variant="outlined"

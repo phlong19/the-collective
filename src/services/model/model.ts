@@ -16,3 +16,9 @@ export interface Event extends Basic {
   isFree?: boolean;
   isSuperEvent?: boolean;
 }
+
+export interface Article extends Basic {
+  title: string;
+  image: string;
+  author: string;
+}
