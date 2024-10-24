@@ -19,9 +19,37 @@ function App() {
         <Routes>
           <Route element={<AppLayout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="events" />
+            <Route path="articles" />
+            <Route path="event/:slug" />
+            <Route path="article/:slug" />
+            <Route path="global-search" />
           </Route>
-          <Route path="about" />
+          {/* auth */}
+            <Route>
+              <Route path="/login" />
+              <Route path="/register" />
+              <Route path="/forgot-password" />  
+            </Route>
+
+    {/* authenticated */}
+
+    <Route>
+            <Route path="profile" element={<Profile />} />
+      <Route path="submit-event" />
+      <Route path="preference" />
+      <Route path="favorite" />
+      <Route path="purchased" />
+      <Route path="interlink" />
+    <Route path="unsubscribe" />
+    </Route>
+
+          <Route path="sitemap" />
+          <Route path="privacy-statement" />
+          <Route path="terms-of-use" />
+          <Route path="FAQs" />
+
+    <Route path="maintenance" />
 
           <Route path="*" element={<NotFound404 />} />
         </Routes>
