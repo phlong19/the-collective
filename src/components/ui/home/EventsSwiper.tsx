@@ -1,12 +1,14 @@
-import Slider, { Settings } from "react-slick";
-import { Event } from "@/services/model/model";
-import { useCallback, useMemo } from "react";
 import { Badge, Flex, Image, Popover, Typography } from "antd";
 import { AIArrowRight, AICalendar, AIRss } from "aveicon";
-import { SCREEN } from "@/constants/variable";
-import dayjs from "@/utils/dayjs";
-import CTAButton from "../CTAButton";
+import { useCallback, useMemo } from "react";
 import { Link } from "react-router-dom";
+import Slider, { Settings } from "react-slick";
+
+import { SCREEN } from "@/constants/variable";
+import { Event } from "@/services/model/model";
+import dayjs from "@/utils/dayjs";
+
+import CTAButton from "../CTAButton";
 
 const { Title, Text, Paragraph } = Typography;
 
@@ -133,10 +135,10 @@ export default function EventsSwiper() {
           •Event•
         </Title>
 
-        <Title className="font-poppins !text-xl font-semibold capitalize">
+        <Title className="!m-0 font-poppins !text-xl font-semibold capitalize">
           what's up in the world
         </Title>
-        <Paragraph className="text-lg leading-[25px]">
+        <Paragraph className="!m-0 text-lg leading-[25px]">
           Here's the latest line up not to be missed.
         </Paragraph>
       </Flex>
@@ -183,7 +185,7 @@ export default function EventsSwiper() {
                     </Text>
                   </Flex>
                   <Link to={id}>
-                    <Title level={4} className="font-poppins !text-xl">
+                    <Title level={4} className="!m-0 font-poppins !text-xl">
                       {title}
                     </Title>
                   </Link>

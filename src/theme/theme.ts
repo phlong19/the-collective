@@ -3,6 +3,7 @@ import { ThemeConfig } from "antd";
 export const theme: ThemeConfig = {
   token: {
     colorPrimary: "#E71321",
+    colorText: "#2d2926",
     fontFamily: "Comfortaa",
   },
 

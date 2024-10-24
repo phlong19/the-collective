@@ -12,7 +12,7 @@ function Footer() {
     <AntdFooter style={{ padding: "36px 16px" }} className="bg-dark">
       <Title
         level={2}
-        style={{ paddingBottom: "24px" }}
+        style={{ paddingBottom: "24px", margin: 0 }}
         className="font-poppins !text-xl leading-6 !text-white"
       >
         The Collective - Culture Anywhere

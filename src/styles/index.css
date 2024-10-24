@@ -30,11 +30,6 @@ ul.slick-dots li.slick-active div {
 
 /* antd */
 
-/* typo */
-.ant-typography {
-  margin: 0 !important;
-}
-
 /* collapse */
 .ant-collapse-header {
   padding: 0 !important;

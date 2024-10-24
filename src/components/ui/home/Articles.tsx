@@ -18,12 +18,15 @@ export default function Articles() {
       >
         <Title
           level={3}
-          className="font-poppins !text-lg !font-semibold capitalize !text-primary"
+          className="!m-0 font-poppins !text-lg !font-semibold capitalize !text-primary"
         >
           • article •
         </Title>
 
-        <Title level={2} className="font-poppins !text-xl capitalize leading-6">
+        <Title
+          level={2}
+          className="!m-0 font-poppins !text-xl capitalize leading-6"
+        >
           the talk of the town
         </Title>
 
@@ -57,10 +60,10 @@ export default function Articles() {
                 ></Button>
               </div>
               <Flex className="flex-col gap-2 !p-4">
-                <Title className="font-poppins !text-lg !font-semibold">
+                <Title className="!m-0 font-poppins !text-lg !font-semibold">
                   {item.title}
                 </Title>
-                <Paragraph className="italic">{item.author}</Paragraph>
+                <Paragraph className="!m-0 italic">{item.author}</Paragraph>
               </Flex>
             </Flex>
           ) : (
@@ -79,10 +82,10 @@ export default function Articles() {
               </div>
 
               <Flex className="flex-col gap-2 !px-10 !pb-6">
-                <Title className="font-poppins !text-lg !font-semibold">
+                <Title className="!m-0 font-poppins !text-lg !font-semibold">
                   {item.title}
                 </Title>
-                <Paragraph className="italic">{item.author}</Paragraph>
+                <Paragraph className="!m-0 italic">{item.author}</Paragraph>
               </Flex>
             </Flex>
           ),
