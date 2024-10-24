@@ -19,7 +19,7 @@ export default function SubscribeFloatButton() {
       <Button
         onClick={() => setShow(true)}
         style={{ padding: 40 }}
-        className="sticky left-5 top-1/2 z-50 w-[72px] whitespace-normal break-words rounded-full border-none bg-primary text-center font-poppins !text-xs !font-semibold !text-white shadow-sm shadow-dark"
+        className="fixed left-5 top-1/2 z-50 w-[72px] whitespace-normal break-words rounded-full border-none bg-primary text-center font-poppins !text-xs !font-semibold !text-white shadow-sm shadow-dark"
         variant="filled"
       >
         Subscribe now
