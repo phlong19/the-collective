@@ -6,6 +6,9 @@
 @tailwind utilities;
 
 :root {
+  --dark: #2d2926;
+  --gray-border: #d5d4d4;
+  --primary: #e71321;
 }
 
 *,
@@ -39,6 +42,10 @@ ul.slick-dots li.slick-active div {
   padding: 0 !important;
 }
 
+.ant-collapse-expand-icon {
+  padding-inline: 0 !important;
+}
+
 /* drawer */
 .ant-drawer-header-title {
   flex-direction: row-reverse;
@@ -52,7 +59,7 @@ ul.slick-dots li.slick-active div {
 }
 
 .ant-drawer-close path {
-  stroke: red;
+  stroke: var(--primary);
 }
 
 /* modal */
