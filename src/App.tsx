@@ -1,20 +1,20 @@
 // libs
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // layouts
 import AppLayout from "./components/layout/AppLayout";
 // ui
 import NotFound404 from "./components/ui/NotFound404";
-import Event from "./pages/Event";
 // ui
 import ScrollToTop from "./components/ui/ScrollToTop";
 import Articles from "./pages/Articles";
+import Event from "./pages/Event";
 import Events from "./pages/Events";
 // pages
 import Home from "./pages/Home";
+import Maintenance from "./pages/Maintenance";
 import Profile from "./pages/Profile";
 
 const client = new QueryClient();
@@ -57,8 +57,7 @@ function App() {
           <Route path="terms-of-use" />
           <Route path="FAQs" />
 
-          <Route path="maintenance" />
-          <Route path="maintenance" />
+          <Route path="maintenance" element={<Maintenance />} />
 
           <Route path="*" element={<NotFound404 />} />
         </Routes>

@@ -7,6 +7,7 @@ import { useAppSelector } from "@/hooks/hooks";
 import Announcement from "../ui/Announcement";
 import DesktopNavBar from "../ui/DesktopFloatMenu";
 import Footer from "../ui/Footer";
+import StayConnected from "../ui/home/StayConnected";
 import MobileNavBar from "../ui/MobileNavBar";
 
 export default function AppLayout() {
@@ -18,6 +19,7 @@ export default function AppLayout() {
       {matches ? <MobileNavBar /> : <DesktopNavBar />}
       {showAnnouncement && <Announcement />}
       <Outlet />
+      <StayConnected />
       <Footer />
     </Layout>
   );

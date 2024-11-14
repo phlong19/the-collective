@@ -42,11 +42,12 @@ export default function Articles() {
             <Flex
               key={index}
               style={{ paddingInline: "16px" }}
-              className={`${index === articles.length - 1 ? "border-b" : ""} border-gray-border border-t !py-4`}
+              className={`${index === articles.length - 1 ? "border-b" : ""} border-t border-gray-border !py-4`}
             >
               {/* wrapper for like btn */}
               <div className="relative w-full">
                 <Image
+                  preview={false}
                   src={item.image}
                   wrapperClassName="h-full"
                   alt="article thumbnail"
@@ -70,6 +71,7 @@ export default function Articles() {
             <Flex key={index} className="mt-2.5 w-full flex-col gap-3 !px-4">
               <div className="relative w-full">
                 <Image
+                  preview={false}
                   src={item.image}
                   alt="article thumbnail"
                   className="rounded object-cover"
@@ -93,6 +95,7 @@ export default function Articles() {
       </Flex>
 
       <CTAButton
+        to="articles"
         icon={<AIArrowRight stroke="white" size={12} />}
         label="view all articles"
       />

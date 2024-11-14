@@ -1,5 +1,4 @@
 import Articles from "@/components/ui/home/Articles";
-import StayConnected from "@/components/ui/home/StayConnected";
 import SubscribeFloatButton from "@/components/ui/home/SubscribeFloatButton";
 
 import EventsSwiper from "../components/ui/home/EventsSwiper";
@@ -16,7 +15,6 @@ export default function Home() {
       <EventsSwiper />
       <SpotlightArticles />
       <Articles />
-      <StayConnected />
     </div>
   );
 }

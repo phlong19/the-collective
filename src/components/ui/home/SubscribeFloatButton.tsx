@@ -19,7 +19,7 @@ export default function SubscribeFloatButton() {
       <Button
         onClick={() => setShow(true)}
         style={{ padding: 40 }}
-        className="fixed left-5 top-1/2 z-50 w-[72px] whitespace-normal break-words rounded-full border-none bg-primary text-center font-poppins !text-xs !font-semibold !text-white shadow-sm shadow-dark"
+        className="fixed left-5 top-1/2 z-50 w-[72px] whitespace-normal break-words rounded-full border-none bg-primary text-center font-poppins !text-xs !font-semibold !text-white shadow-sm shadow-dark transition-colors duration-300 hover:!bg-primary-800"
         variant="filled"
       >
         Subscribe now
@@ -82,7 +82,7 @@ export default function SubscribeFloatButton() {
             <Input
               prefix={<AIMail className="mx-2" size={20} />}
               placeholder="Email"
-              className="border-gray-border h-16 border font-comfortaa !text-base !font-normal text-black"
+              className="h-16 border border-gray-border font-comfortaa !text-base !font-normal text-black"
             />
           </Flex>
         </Flex>

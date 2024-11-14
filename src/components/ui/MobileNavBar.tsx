@@ -45,7 +45,9 @@ export default function MobileNavBar() {
         }}
         className="bg-dark"
       >
-        <p className="text-white">logo</p>
+        <Link to="/">
+          <p className="text-white">logo</p>
+        </Link>
 
         <Button
           style={{
@@ -97,7 +99,7 @@ export default function MobileNavBar() {
           ) : link.type === "single" ? (
             <div
               key={link.title}
-              className={`${link.border ? "border-gray-border border-y py-3.5" : ""} mb-4 flex w-fit items-center gap-3 font-comfortaa text-lg font-bold capitalize leading-6 text-dark`}
+              className={`${link.border ? "border-y border-gray-border py-3.5" : ""} mb-4 flex w-fit items-center gap-3 font-comfortaa text-lg font-bold capitalize leading-6 text-dark`}
             >
               <SingleMenuLink
                 icon={<DynamicAveIcon name={link.icon || ""} size={20} />}
@@ -179,7 +181,7 @@ export default function MobileNavBar() {
             <div
               onClick={() => setSelected(item)}
               key={index}
-              className={`${!item.isRead ? "border-l-4 border-primary !font-bold" : ""} ${index === notifications.length - 1 ? "border-b-gray-border border-b" : ""} border-t-gray-border w-full border-t p-4 pl-[30px] text-base font-normal`}
+              className={`${!item.isRead ? "border-l-4 border-primary !font-bold" : ""} ${index === notifications.length - 1 ? "border-b border-b-gray-border" : ""} w-full border-t border-t-gray-border p-4 pl-[30px] text-base font-normal`}
             >
               {item.title}
             </div>

@@ -6,6 +6,9 @@ export const theme: ThemeConfig = {
     colorText: "#2d2926",
     fontFamily: "Comfortaa",
   },
+  components: {
+    Checkbox: {},
+  },
 
   // primary: {
   //   "800": "#EC424D",
