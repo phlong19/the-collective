@@ -1,4 +1,5 @@
-import { Flex, Select, Typography } from "antd";
+import { IconX } from "@tabler/icons-react";
+import { Button, Flex, Select, Typography } from "antd";
 import { useSearchParams } from "react-router-dom";
 
 import { SORTBY } from "@/constants/variable";
@@ -15,7 +16,12 @@ export default function FilterRenderGroup({ label, options }: Props) {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const filters = searchParams.values();
+  const entries = searchParams.entries();
+
+  const filters = Array.from(entries).map(([key, value]) => ({
+    name: key,
+    values: value.split(","),
+  }));
 
   return (
     <div className="py-5">
@@ -26,10 +32,26 @@ export default function FilterRenderGroup({ label, options }: Props) {
         {label}
       </Title>
 
-      {/* render chips */}
-      <div></div>
+      <Flex wrap className="gap-3">
+        {filters.map((chip, index) =>
+          chip.values.map((value) => (
+            <div
+              className="relative rounded-full border-2 border-primary p-2 pr-4"
+              key={index}
+            >
+              {value}
+              <Button
+                variant="outlined"
+                shape="round"
+                className="absolute right-0 h-auto !px-2 !py-1"
+                icon={<IconX />}
+              />
+            </div>
+          )),
+        )}
+      </Flex>
 
-      <Flex gap={"16px"} align="center" className="mt-2.5">
+      <Flex gap="16px" align="center" className="mt-2.5">
         <Text className="font-comfortaa !text-sm !font-bold capitalize">
           sort by:
         </Text>
@@ -50,3 +72,5 @@ export default function FilterRenderGroup({ label, options }: Props) {
     </div>
   );
 }
+
+const chips = [];
